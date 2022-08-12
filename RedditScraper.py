@@ -49,6 +49,7 @@ class RScraper:
                             pass
 
                     else:
+                        bar.next(100 / posts_to_scan)
                         continue
 
                 else:

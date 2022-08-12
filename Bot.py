@@ -29,18 +29,18 @@ if __name__ == "__main__":
             user = User.login()
 
             schedule.every(6).hours.do(MainRedditScraper.run)
-            schedule.every(6).hours.do(MainInstagramScrapper.run)
+            schedule.every(6).hours.do(MainInstagramScraper.run)
             schedule.every(6).hours.do(MainUploadPost.run)
-            schedule.every(4).hours.do(MainUploadIgtv.run)
-            schedule.every().hour.do(MainUploadStory.run)
+            schedule.every(6).hours.do(MainUploadIgtv.run)
+            schedule.every(6).hours.do(MainUploadStory.run)
             schedule.every(10).days.do(Growth.create_bucket)
             schedule.every(2).hours.do(Growth.follow_bucket)
 
             print(
                 '''
                 Post uploading every 6H.
-                Story uploading every 1H.
-                IgTv uploading every 4H.
+                Story uploading every 6H.
+                IgTv uploading every 6H.
                 ---     Scrapping     ---
                 RedditScrapper every 6H.
                 InstagramScrapper every 6H.
